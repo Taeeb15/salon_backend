@@ -3,7 +3,9 @@ const { connectDB } = require("./db/connection");
 const { fetchCategorires } = require("./apis/users/FetchCategories");
 let app=express()
 app.use(express.json())
-
+app.get("/",(req,res)=>{
+    res.send("Welcome to salon backend")
+})
 app.get("/categories",fetchCategorires)
 connectDB()
 app.listen(8000,()=>{
